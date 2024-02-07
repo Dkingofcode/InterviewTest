@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sum Total of Polling Unit Results</title>
+    <style>
+        /* Add your custom CSS styles here */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+        }
+        .local-governments {
+            margin-bottom: 20px;
+        }
+        .local-government-item {
+            margin-bottom: 10px;
+        }
+        .polling-unit-results {
+            margin-top: 20px;
+        }
+        .polling-unit-results p {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Sum Total of Polling Unit Results</h1>
+        
+        <!-- Local Governments Selection -->
+        <div class="local-governments">
+            <h2>Select Local Governments:</h2>
+            <% localGovernments.forEach(function(localGovernment) { %>
+                <div class="local-government-item">
+                    <input type="checkbox" id="<%= localGovernment.id %>" name="localGovernment" value="<%= localGovernment.id %>">
+                    <label for="<%= localGovernment.id %>"><%= localGovernment.name %></label>
+                </div>
+            <% }); %>
+        </div>
+
+        <!-- Polling Unit Results -->
+        <div class="polling-unit-results">
+            <h2>Sum Total of Polling Unit Results:</h2>
+            <p><strong>Total Votes:</strong> <%= totalVotes %></p>
+            <p><strong>Total Registered Voters:</strong> <%= totalRegisteredVoters %></p>
+            <!-- Add more result fields as needed -->
+        </div>
+    </div>
+</body>
+</html>

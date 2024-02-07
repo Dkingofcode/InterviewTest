@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Polling Unit Results</title>
+    <style>
+        /* Add your custom CSS styles here */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+        }
+        .polling-unit-results {
+            margin-top: 20px;
+        }
+        .polling-unit-results table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        .polling-unit-results table th,
+        .polling-unit-results table td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        .polling-unit-results table th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Polling Unit Results</h1>
+        
+        <!-- Polling Unit Results -->
+        <div class="polling-unit-results">
+            <h2>Results for New Polling Unit</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Party</th>
+                        <th>Total Votes</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% pollingUnitResults.forEach(function(result) { %>
+                        <tr>
+                            <td><%= result.party %></td>
+                            <td><%= result.totalVotes %></td>
+                        </tr>
+                    <% }); %>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+</html>
